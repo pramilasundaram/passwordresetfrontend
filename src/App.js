@@ -2,7 +2,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/header/Header';
-import {BrowserRouter,Routes,Route} from "react-router-dom"
+
+import {Routes,Route} from "react-router-dom"
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import Forgotpassword from './pages/forgotpassword/Forgotpassword';
@@ -15,7 +16,7 @@ import Emailsender from "./pages/emailsender/Emailsender"
 function App() {
   return (  
     <Provider>
-    <BrowserRouter>  
+   
     <Header />
      <Routes>
      <Route path="/" element={<Login/>}/>  
@@ -25,7 +26,7 @@ function App() {
      <Route path="/home" element={<Protected><Emailsender/></Protected>}/>  
      </Routes>
      <Footer/>    
-    </BrowserRouter>  
+  
     </Provider>   
   );
 }
