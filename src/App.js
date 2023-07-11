@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
+import Header from './components/header/Header';
+import {BrowserRouter,Routes,Route} from "react-router-dom"
+import Login from './pages/login/Login';
+import Register from './pages/register/Register';
+import Forgotpassword from './pages/forgotpassword/Forgotpassword';
+import Passwordreset from './pages/passwordreset/Passwordreset';
+import Footer from './components/footer.js/Footer';
+import Protected from "./Proctected";
+import Provider from "./Provider";
+import Emailsender from "./pages/emailsender/Emailsender"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return (  
+    <Provider>
+    <BrowserRouter>  
+    <Header />
+     <Routes>
+     <Route path="/" element={<Login/>}/>  
+     <Route path="/register" element={<Register/>}/>    
+     <Route path="/forgotpassword" element={<Forgotpassword/>}/>    
+     <Route path="/resetpassword/:id/:token" element={<Passwordreset/>}/>  
+     <Route path="/home" element={<Protected><Emailsender/></Protected>}/>  
+     </Routes>
+     <Footer/>    
+    </BrowserRouter>  
+    </Provider>   
   );
 }
-
 export default App;
+
