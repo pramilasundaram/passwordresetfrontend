@@ -31,7 +31,7 @@ export default function Login() {
           if(response.status===200){   
             console.log(response.data.message)        
             setIsAuthenticated (true)
-            setUser(response.data)   
+            setUser(response.data.user)   
             setForm({...form,
               email: "",
               password: "",
