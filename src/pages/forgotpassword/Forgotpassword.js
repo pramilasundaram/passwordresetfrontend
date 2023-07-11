@@ -62,7 +62,7 @@ export default function Forgotpassword() {
                             </FormGroup>
                             {' '}
                             <Button color="dark">
-                                Submit
+                                Send
                             </Button>
                         </Form>
                     </CardBody>

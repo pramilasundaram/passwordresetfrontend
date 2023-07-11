@@ -86,7 +86,7 @@ export default function Login() {
                       {' '}
 
                       <Button color="dark">
-                        Submit
+                        Reset
                       </Button>
                   </Form>
                 </CardBody>
